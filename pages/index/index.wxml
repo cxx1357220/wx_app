@@ -1,0 +1,158 @@
+<!--index.wxml-->
+
+<swiper vertical='true' current='{{currentTab}}' class="view-all">
+  <block>
+    <swiper-item>
+      <view class='background-blue'>
+        <view class="container">
+          <view class="userinfo">
+            <image class="userinfo-avatar" src="../../img/id.jpg" mode="cover"></image>
+            <text class="user-motto">{{userInfo.motto}}</text>
+            <text class='bor-line'></text>
+            <text class="userinfo-nickname">{{userInfo.name}}</text>
+            <text class="userinfo-nickname">{{userInfo.job}}</text>
+          </view>
+        </view>
+        <view>
+        <swiper indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='introduce'>
+          <block>
+            <swiper-item>
+              <view><text>关于我</text></view>
+              <view>性别：{{userInfo.sex}}</view>
+              <view>年龄：{{userInfo.year}}</view>
+              <view>学校：{{userInfo.school}}</view>
+              <view>专业：{{userInfo.major}}</view>
+            </swiper-item>
+          </block>
+          <block>
+            <swiper-item>
+              <view><text>技能</text></view>
+              <view>
+               <view wx:for="{{skill}}" class='around around-{{index%2==0?"left":"right"}}'>
+                  <view class="section section_gap">
+                    <text class="section__title">{{item.name}}</text>
+                    <slider value='{{item.score}}' disabled='false' block-size='12' block-color='#1aad19' class="skill"/>
+                  </view>  
+                </view>
+              </view>
+            </swiper-item>
+          </block>
+          <block>
+            <swiper-item>
+              <view><text>工作经历</text></view>
+              <view>{{workHistory.company}}</view>
+              <view class='font-time'>{{workHistory.date}}</view>
+              <view class='font-time'>{{workHistory.bear}}</view> 
+            </swiper-item>
+          </block>
+          <block>
+            <swiper-item>
+              <view><text>联系我</text></view>
+              <view><image src='../../img/phone.svg' class="icon"></image>：{{userInfo.phone}}</view>
+              <view><image src='../../img/email.svg' class="icon"></image>：{{userInfo.email}}</view>
+              <view><image src='../../img/github.svg' class="icon"></image>：{{userInfo.github}}</view>
+              <view><image src='../../img/blog.svg' class="icon"></image>：{{userInfo.blog}}</view>      
+            </swiper-item>
+          </block>
+        </swiper>
+        </view>
+        <view class='text-center more' bindtap="moreExperience"><text class='ico_down'></text></view>
+      </view>
+    </swiper-item>
+  </block>
+  <block>
+    <swiper-item  class='background-gold '>
+      <view class='text-center title'><text>项目经验</text></view>
+      <block wx:for="{{project}}" >
+      <view class='background-white'> 
+        <view class='project-title'>{{item.title}}</view>
+        <view class='project-introduce'>使用框架：{{item.introduce}}</view>
+        <view class='project-detailed'>介绍：{{item.detailed}}</view>
+      </view>
+
+      </block>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<!-- <view class='background'>
+  <view class="container">
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="../../img/id.jpg" mode="cover"></image>
+      <text class="user-motto">{{userInfo.motto}}</text>
+      <text class='bor-line'></text>
+      <text class="userinfo-nickname">{{userInfo.name}}</text>
+      <text class="userinfo-nickname">{{userInfo.job}}</text>
+    </view>
+  </view>
+  <view>
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block>
+      <swiper-item>
+        <view><text>关于我</text></view>
+        <view>性别：{{userInfo.sex}}</view>
+        <view>年龄：{{userInfo.year}}</view>
+        <view>学校：{{userInfo.school}}</view>
+        <view>专业：{{userInfo.major}}</view>
+      </swiper-item>
+    </block>
+    <block>
+      <swiper-item>
+        <view><text>技能</text></view>
+        <view class='around'>
+          <view>
+            <view class="section section_gap">
+              <text class="section__title">html</text>
+              <slider value='{{skill.html}}' disabled='false' block-size='12' block-color='#1aad19' class="skill"/>
+            </view>        
+            <view class="section section_gap">
+              <text class="section__title">JavaScript</text>
+              <slider value='{{skill.JavaScript}}' disabled='false' block-size='12' block-color='#1aad19' class="skill"/>
+            </view>  
+            <view class="section section_gap">
+              <text class="section__title">css</text>
+              <slider value='{{skill.css}}' disabled='false' block-size='12' block-color='#1aad19' class="skill"/>
+            </view>   
+          </view>
+          <view>
+            <view class="section section_gap">
+              <text class="section__title">jQuery</text>
+              <slider value='{{skill.jQuery}}' disabled='false' block-size='12' block-color='#1aad19' class="skill"/>
+            </view>        
+            <view class="section section_gap">
+              <text class="section__title">vue.js</text>
+              <slider value='{{skill.vue}}' disabled='false' block-size='12' block-color='#1aad19' class="skill"/>
+            </view>  
+            <view class="section section_gap">
+              <text class="section__title">ECharts.js</text>
+              <slider value='{{skill.ECharts}}' disabled='false' block-size='12' block-color='#1aad19' class="skill"/>
+            </view>   
+          </view>                       
+        </view>      
+      </swiper-item>
+    </block>
+    <block>
+      <swiper-item>
+        <view><text>工作经历</text></view>
+        <view>东华软件股份公司-前端工程师</view>
+        <view class='font-time'>2017-07至2018-07</view>
+        <view class='font-time'>主要负责前端开发，与后台人员以及产品配合实现产品前端界面效果与功能。</view> 
+        <view class='text-center more' bindtap="moreExperience"><text class='ico_down'></text></view>
+      </swiper-item>
+    </block>
+    <block>
+      <swiper-item>
+        <view><text>联系我</text></view>
+        <view><image src='../../img/phone.svg' class="icon"></image>：{{userInfo.phone}}</view>
+        <view><image src='../../img/email.svg' class="icon"></image>：{{userInfo.email}}</view>
+        <view><image src='../../img/github.svg' class="icon"></image>：{{userInfo.github}}</view>
+        <view><image src='../../img/blog.svg' class="icon"></image>：{{userInfo.blog}}</view>      
+      </swiper-item>
+    </block>
+  </swiper>
+  </view>
+</view> -->
+

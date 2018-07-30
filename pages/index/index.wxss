@@ -1,0 +1,134 @@
+/**index.wxss**/
+
+.background-blue{
+  background-color:  cadetblue; 
+  height: 100vh;
+  color: #fff;
+}
+.background-gold{
+  background-color: silver; 
+  height: 100vh;
+  color: #fff;
+}
+.background-white{
+  background-color: white;
+  margin: 15rpx 30rpx;
+  color:  #333;
+  border-radius: 10rpx 30rpx;
+  padding:30rpx;
+  font-size: 24rpx;
+}
+
+.title{
+  padding: 30rpx 0 0 0;
+  color: cornsilk;
+}
+
+.project-title{
+  font-weight: bold;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  width: 90vw; 
+  padding: 30rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+}
+
+.bor-line {
+  margin: 15rpx 0;
+  width:80%;
+  border-bottom: 1px solid #fff;
+}
+
+.user-motto {
+  font-weight: bold;
+  font-size: 40rpx;
+  color:#fff;
+}
+
+.introduce swiper-item > view{
+  padding:5rpx 80rpx 0 80rpx;
+}
+
+.introduce swiper-item > view:first-child{
+  padding:0; 
+  padding-bottom:20rpx; 
+  color: #fff;
+  text-align: center;
+  font-size: 50rpx;
+}
+
+swiper{
+  height: 380rpx;
+}
+
+.icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.skill{
+   margin:0;  
+}
+
+.section__title{
+  font-size: 30rpx;
+}
+
+.float-left{
+  width: 30vw;
+  float: left;
+}
+.section{
+  padding:0; 
+}
+.around{
+  width: 35vw;
+}
+.around-left{
+  float: left;
+}
+.around-right{
+  float: right;
+}
+.around-right:after{
+  clear: both;
+}
+.font-time{
+  font-size:30rpx;
+}
+.text-center{
+  text-align: center;
+}
+.more{
+  border: 0;
+  border-radius: 20rpx;
+  font-size:30rpx; 
+  position:absolute;
+  bottom:0;
+  width:100vw;
+}
+.ico_down{
+    float: top; 
+    width: 0;
+    height: 0;
+    border: 25rpx solid transparent ;
+    border-top-color:#B0B0B0 ;
+}
+
+.view-all{
+  height: 100vh;
+}
